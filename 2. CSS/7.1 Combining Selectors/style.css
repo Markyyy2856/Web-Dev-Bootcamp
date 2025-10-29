@@ -1,0 +1,26 @@
+/* Write your code here: */
+
+/*Group - separated by comma*/
+h1, h2 { 
+    color: blueviolet;
+}
+
+/*Child - applied to direct child, separated by > */
+.box > p {
+    color: firebrick;
+}
+
+/*Descendant - separated by space*/
+.box li {
+    color: blue;
+}
+
+/*Chaining - no space*/
+li.done {
+    color: seagreen;
+}
+
+/*Combining Combiners - ex. Ancestor + chain*/
+ul p.done {
+    font-size: 0.5rem;
+}
