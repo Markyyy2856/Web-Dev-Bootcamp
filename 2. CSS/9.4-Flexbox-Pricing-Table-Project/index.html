@@ -9,64 +9,72 @@
       rel="stylesheet"
     />
     <style>
-    body {
-      font-family: 'Sono', sans-serif;
-    }
-
-    .pricing-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      gap: 2rem;
-    }
-
-    .pricing-plan {
-      flex: 1;
-      max-width: 400px;
-      padding: 20px;
-      background-color: #f2f2f2;
-      border-radius: 5px;
-      text-align: center;
-    }
-
-    .plan-title {
-      font-size: 24px;
-      font-weight: bold;
-      margin-bottom: 10px;
-    }
-
-    .plan-price {
-      font-size: 48px;
-      font-weight: bold;
-      margin-bottom: 10px;
-    }
-
-    .plan-features {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    .plan-features li {
-      margin-bottom: 20px;
-    }
-
-    .plan-button {
-      padding: 10px;
-      background-color: #ff6600;
-      color: #fff;
-      border-radius: 5px;
-      border: none;
-    }
-      
-      /* Hint: What can you do with a media query and flexbox? */
-    @media (max-width: 1250px) {
-      .pricing-container {
-        flex-direction: column;
-        height: 100%;
+      body {
+        font-family: "Sono", sans-serif;
       }
-    }
+
+      .pricing-container {
+        display: flex; /* aligns everything horizontally on one line */
+        justify-content: center; /* centers it */
+        align-items: center;
+        height: 100vh; /* adds a height of 100 */
+        gap: 2rem; /* adds 2rem of spaces between each container */
+      }
+
+      .pricing-plan {
+        flex: 1; /* allows grow and shrink of flex items to fill spaces in a layout */
+        max-width: 400px; /* for responsiveness */
+        padding: 20px; /* padding/space around pricing plan */
+        background-color: #f2f2f2; /* visible light grey background */
+        border-radius: 8px; /* slightly rounded corners */
+        text-align: center; /* aligns texts inside to center */
+      }
+
+      .plan-title {
+        font-size: 24px; /* Resizes the plan title */
+        font-weight: bold; /* makes it bold */
+        margin-top: 10px; /* adds a margin/space above(outside) the title */
+      }
+
+      .plan-price {
+        font-size: 48px; /* resizes the plan price */
+        font-weight: bold; /* makes it bold */
+        margin-bottom: 10px; /* adds margin/space below(outside) the price */
+      }
+
+      .plan-features {
+        list-style: none; /* remves the bullets of lists */
+        padding: 0; /* removes padding(check box model) */
+        margin: 0; /* removes margin(check box model) */
+      }
+
+      .plan-features li {
+        /* Specificity - descendant, targets all list */
+        margin-bottom: 20px; /* gives each item on list a margin bottom of 20px */
+      }
+
+      .plan-button {
+        padding: 10px; /* adds a padding/space(inside) the button */
+        background-color: #ff6600; /* background of red-orange */
+        color: #fff; /* text color of white */
+        border-radius: 5px; /* rounded corners */
+        border: none; /* removes visible border */
+      }
+
+      /* added this fun pseudo-code for visual effects */
+      .plan-button:hover {
+        cursor: pointer;
+        background-color: #b34800;
+        color: #e0e0e0;
+      }
+
+      /* Hint: What can you do with a media query and flexbox? */
+      @media (max-width: 1250px) {
+        .pricing-container {
+          flex-direction: column; /* sets the direction of flex items/responsiveness to column */
+          height: 100%;
+        }
+      }
     </style>
   </head>
 
