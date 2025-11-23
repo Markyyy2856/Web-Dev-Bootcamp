@@ -1,0 +1,39 @@
+function main(){
+   putBeeper();
+   move();
+   forward();
+   left();
+   forward();
+   move();
+   right();
+   putBeeper();
+   move();
+   forward();
+   left();
+   forward();
+   move();
+   right();
+   putBeeper();
+   move();
+   forward();
+}
+
+function forward() {
+   move();
+   putBeeper();
+   move();
+   move();
+   putBeeper();
+}
+
+function left() {
+   turnLeft();
+   move();
+   turnLeft();
+}
+
+function right() {
+   turnRight();
+   move();
+   turnRight();
+}

@@ -1,0 +1,832 @@
+1
+00:00:00,000 --> 00:00:06,000
+All right guys. Let's say that you've completed this course and you've built up a portfolio of websites
+
+2
+00:00:06,000 --> 00:00:12,000
+that you have coded up and you're ready to get a job as a web developer.
+
+3
+00:00:12,000 --> 00:00:18,000
+Now one of the most common questions that you're going to encounter on any programming interview is something
+
+4
+00:00:18,000 --> 00:00:23,000
+called FizzBuzz, and it's a really simple problem and this is usually how they would define it.
+
+5
+00:00:23,000 --> 00:00:29,000
+So you have to write a program that prints the numbers from 1 to 100. But for multiples of three print
+
+6
+00:00:29,000 --> 00:00:35,000
+"Fizz" instead of the number and for the multiples of five print "Buzz". For numbers which are multiples of both
+
+7
+00:00:35,000 --> 00:00:40,000
+three and five, for example fifteen, then print "FizzBuzz" instead of the number.
+
+8
+00:00:41,000 --> 00:00:46,000
+So it's pretty simple, but it's a really easy way of seeing how you solve problems and demonstrating
+
+9
+00:00:46,000 --> 00:00:48,000
+a candidate's programming skills.
+
+10
+00:00:48,000 --> 00:00:56,000
+And just the other day I came across an article on Coding Horror, which is one of my favorite blogs, about,
+
+11
+00:00:56,000 --> 00:00:58,000
+"Why can't programmers program?"
+
+12
+00:00:58,000 --> 00:01:03,000
+And the interesting thing that they talk about is what seems to be common knowledge amongst programming
+
+13
+00:01:03,000 --> 00:01:08,000
+recruiters, and the fact of the matter is that out of 200 applicants there's probably only one person
+
+14
+00:01:08,000 --> 00:01:10,000
+who can actually code.
+
+15
+00:01:10,000 --> 00:01:12,000
+And this is a really strange phenomenon.
+
+16
+00:01:13,000 --> 00:01:17,000
+Part of the reason is down to the fact that completing computer science degrees doesn't necessarily
+
+17
+00:01:17,000 --> 00:01:24,000
+enable people to code, and a lot of people will graduate from a computer science degree and they might
+
+18
+00:01:24,000 --> 00:01:30,000
+know how, say, compilers work or, you know, some aspects of computer history, but they might not actually
+
+19
+00:01:30,000 --> 00:01:33,000
+know exactly how to write good code.
+
+20
+00:01:33,000 --> 00:01:39,000
+One of the most interesting statistics I came across is that in the UK, some of the most in-demand jobs
+
+21
+00:01:39,000 --> 00:01:41,000
+involve programming and software development,
+
+22
+00:01:41,000 --> 00:01:47,000
+and yet the university degree that has the highest unemployment rate happens to be computer science,
+
+23
+00:01:48,000 --> 00:01:50,000
+which is really, really strange.
+
+24
+00:01:50,000 --> 00:01:56,000
+So I'm going to use this classic interview question and I'm going to make it even more difficult because
+
+25
+00:01:56,000 --> 00:01:59,000
+we're going to use it to learn all about arrays
+
+26
+00:01:59,000 --> 00:02:01,000
+but on a slightly deeper level.
+
+27
+00:02:01,000 --> 00:02:08,000
+So let's try and be better than 199 of programming interviewees, and let's look at this FizzBuzz problem
+
+28
+00:02:08,000 --> 00:02:11,000
+and use it to learn more about arrays.
+
+29
+00:02:11,000 --> 00:02:18,000
+So the problem is based on a game that children play in England, in the UK which somebody at some point
+
+30
+00:02:18,000 --> 00:02:23,000
+thought was fun, but that really depends on your definition of fun.
+
+31
+00:02:23,000 --> 00:02:30,000
+So the idea is that you have a bunch of children in a circle and they will go in turn listing the numbers
+
+32
+00:02:30,000 --> 00:02:31,000
+in sequence.
+
+33
+00:02:31,000 --> 00:02:33,000
+So 1, 2, etc..
+
+34
+00:02:33,000 --> 00:02:39,000
+But if the number that you have to call out is divisible by three then you have to shout Fizz instead
+
+35
+00:02:39,000 --> 00:02:40,000
+of three.
+
+36
+00:02:40,000 --> 00:02:44,000
+And if it's divisible by five you have to shout Buzz instead of five.
+
+37
+00:02:44,000 --> 00:02:49,000
+And if your number is divisible by both then you have an even harder problem because you have to shout
+
+38
+00:02:49,000 --> 00:02:50,000
+FizzBuzz.
+
+39
+00:02:50,000 --> 00:02:56,000
+So, it's pretty simple given that kids can play it, so we can write a program that can a child
+
+40
+00:02:56,000 --> 00:02:57,000
+who can play FizzBuzz.
+
+41
+00:02:57,000 --> 00:03:03,000
+So let's break down the problem. How can we write some code that prints out a sequence of numbers starting
+
+42
+00:03:03,000 --> 00:03:04,000
+from 1?
+
+43
+00:03:04,000 --> 00:03:08,000
+Clearly you can tell that, you know, these children are not going to be programmers because they start
+
+44
+00:03:08,000 --> 00:03:11,000
+counting from 1 rather than 0,
+
+45
+00:03:11,000 --> 00:03:12,000
+but this is how the game works
+
+46
+00:03:12,000 --> 00:03:13,000
+so let's do that.
+
+47
+00:03:13,000 --> 00:03:19,000
+We need to get our code to print out a sequence of numbers starting from 1 and, every single time we
+
+48
+00:03:19,000 --> 00:03:19,000
+run the code,
+
+49
+00:03:19,000 --> 00:03:21,000
+the next number gets called out.
+
+50
+00:03:21,000 --> 00:03:23,000
+So let's create a new array.
+
+51
+00:03:24,000 --> 00:03:25,000
+So let's create a new array,
+
+52
+00:03:26,000 --> 00:03:29,000
+and let's call it output. And we're going to set it to an empty array.
+
+53
+00:03:29,000 --> 00:03:30,000
+Now next,
+
+54
+00:03:30,000 --> 00:03:34,000
+now we can either create a new array by giving it values to begin with,
+
+55
+00:03:34,000 --> 00:03:38,000
+for example this is an array that contains 1, 2, 3, or
+
+56
+00:03:38,000 --> 00:03:46,000
+you can start off with an empty array and use something called push in order to add new items into the
+
+57
+00:03:46,000 --> 00:03:49,000
+array. So you can write output.push(),
+
+58
+00:03:50,000 --> 00:03:55,000
+and inside the parentheses you can put whatever it is that you want to push onto the array.
+
+59
+00:03:55,000 --> 00:03:57,000
+So for example let's push number 1.
+
+60
+00:03:57,000 --> 00:04:04,000
+So now if you print out output, then it's an array with a single item that's the number 1. And you can
+
+61
+00:04:04,000 --> 00:04:07,000
+keep doing this output.push().
+
+62
+00:04:07,000 --> 00:04:09,000
+Let's add 2 to this array.
+
+63
+00:04:09,000 --> 00:04:15,000
+And now output is an array with two values that is 1 and 2.
+
+64
+00:04:15,000 --> 00:04:20,000
+Now the important thing to remember about push is that it always pushes the item that you have in the
+
+65
+00:04:20,000 --> 00:04:23,000
+parentheses to the end of the array.
+
+66
+00:04:23,000 --> 00:04:28,000
+It doesn't push it in randomly into the array or at the beginning, it's always tagged on at the end.
+
+67
+00:04:28,000 --> 00:04:33,000
+And this is a really easy way of adding new items into your array as needed.
+
+68
+00:04:33,000 --> 00:04:40,000
+So in our case adding first 1, then 2, then 3, then 4, etc.. And a related function is something
+
+69
+00:04:40,000 --> 00:04:41,000
+called pop.
+
+70
+00:04:41,000 --> 00:04:46,000
+So you can pop items off your array by using the name of the array.pop().
+
+71
+00:04:46,000 --> 00:04:48,000
+So in our case our array is called eggs.
+
+72
+00:04:48,000 --> 00:04:50,000
+So if we say eggs.pop(),
+
+73
+00:04:50,000 --> 00:04:55,000
+then it will take the last item in the array and it will remove it from the array.
+
+74
+00:04:55,000 --> 00:05:01,000
+So what we've seen is that we can basically keep saying output.push(), and, each time we run this,
+
+75
+00:05:01,000 --> 00:05:09,000
+our array gets a new number added to the sequence, and if we do this many many times then we end up with
+
+76
+00:05:09,000 --> 00:05:10,000
+our sequence of numbers, right?
+
+77
+00:05:10,000 --> 00:05:14,000
+1, 2, 3, then 4, then 5, then 6 etc..
+
+78
+00:05:14,000 --> 00:05:18,000
+Now, the thing is, we're programmers, and this is a little bit too manual for us.
+
+79
+00:05:19,000 --> 00:05:22,000
+And in life, whenever things get a little bit too tedious,
+
+80
+00:05:22,000 --> 00:05:25,000
+my first thought is, I should make a function.
+
+81
+00:05:25,000 --> 00:05:30,000
+Now that happens on a regular basis and sometimes I can and sometimes I can't.
+
+82
+00:05:30,000 --> 00:05:38,000
+For example, loading up the washing machine, really tedious, blow drying long hair is really, really tedious,
+
+83
+00:05:38,000 --> 00:05:44,000
+to the point where I start thinking about making a drone that I could program to dry my hair,
+
+84
+00:05:44,000 --> 00:05:47,000
+it just flies around me and dries my hair.
+
+85
+00:05:47,000 --> 00:05:51,000
+Now, in the future, if you ever come across a picture of me with no hair,
+
+86
+00:05:51,000 --> 00:05:53,000
+then you'll know what happened.
+
+87
+00:05:53,000 --> 00:05:59,000
+So instead of writing output.push() every single time and adding the next number on, let's create
+
+88
+00:05:59,000 --> 00:06:01,000
+a function instead.
+
+89
+00:06:01,000 --> 00:06:09,000
+So let's go into our Snippets inside our index.js, and let's create our output array here, and let's
+
+90
+00:06:09,000 --> 00:06:11,000
+set it to an empty array.
+
+91
+00:06:11,000 --> 00:06:19,000
+Now next I'm going to create a function called fizzBuzz, and this is going to have a console.log in
+
+92
+00:06:19,000 --> 00:06:25,000
+it so that it will print out the value of the output every single time it's run.
+
+93
+00:06:25,000 --> 00:06:28,000
+Okay. So far our function does absolutely nothing.
+
+94
+00:06:29,000 --> 00:06:34,000
+Now here's the challenge. I want you to complete this code so that every single time you run the function
+
+95
+00:06:34,000 --> 00:06:40,000
+fizzBuzz, it will add the next number in the sequence to the array called output.
+
+96
+00:06:40,000 --> 00:06:42,000
+So write your code here,
+
+97
+00:06:42,000 --> 00:06:48,000
+and once you've succeeded, you should be able to call the function fizzBuzz and it will print out the
+
+98
+00:06:48,000 --> 00:06:55,000
+array, and every single time you run this code it will add the next number in the sequence. So you can
+
+99
+00:06:55,000 --> 00:07:00,000
+do something like this where, every time you call fizzBuzz, it will keep going and adding new numbers
+
+100
+00:07:00,000 --> 00:07:03,000
+into the array and printing it out into the console.
+
+101
+00:07:03,000 --> 00:07:07,000
+So you'll need to think back about what we learned in this lesson about push and pop,
+
+102
+00:07:08,000 --> 00:07:13,000
+and also think about how you can keep track of those numbers, and figuring out how you can add it to the
+
+103
+00:07:13,000 --> 00:07:14,000
+array.
+
+104
+00:07:14,000 --> 00:07:17,000
+So pause the video now and see if you can complete this challenge.
+
+105
+00:07:19,000 --> 00:07:19,000
+All right.
+
+106
+00:07:19,000 --> 00:07:21,000
+So how did that go?
+
+107
+00:07:21,000 --> 00:07:28,000
+Well, the first problem we have is we need to add a number that increases by one every single time we
+
+108
+00:07:28,000 --> 00:07:29,000
+run the function.
+
+109
+00:07:29,000 --> 00:07:33,000
+So we need a variable to keep track of that number.
+
+110
+00:07:33,000 --> 00:07:42,000
+So let's create a container, or a variable rather, called count, and let's set it to equal 1 in the beginning.
+
+111
+00:07:42,000 --> 00:07:50,000
+Now what we can do is we can use our output.push() in order to push the value of count onto the end
+
+112
+00:07:50,000 --> 00:07:52,000
+of our array
+
+113
+00:07:52,000 --> 00:07:53,000
+that's called output.
+
+114
+00:07:53,000 --> 00:07:59,000
+So, at this point, if we run our code, the output array gets created as an empty array,
+
+115
+00:07:59,000 --> 00:08:05,000
+and once we run this function fizzBuzz, then 1 will get added to the output array,
+
+116
+00:08:05,000 --> 00:08:07,000
+so we will end up with an array with a single value
+
+117
+00:08:07,000 --> 00:08:12,000
+that's just the number 1, because that's what we pushed onto it.
+
+118
+00:08:12,000 --> 00:08:18,000
+But at the moment, no matter how many times I run this, it will keep adding 1 to the end of the array,
+
+119
+00:08:18,000 --> 00:08:20,000
+which is not quite what we want.
+
+120
+00:08:20,000 --> 00:08:22,000
+We want to increase the sequence of numbers.
+
+121
+00:08:22,000 --> 00:08:25,000
+So in order to do that we have to increment count.
+
+122
+00:08:25,000 --> 00:08:31,000
+And, you might remember from previous lessons, we'll have to do that by saying count equals count plus
+
+123
+00:08:31,000 --> 00:08:34,000
+one, or more simply,
+
+124
+00:08:34,000 --> 00:08:36,000
+we can just write count++.
+
+125
+00:08:36,000 --> 00:08:45,000
+So now, if we run this snippet and I clear my console and let's run fizzBuzz, you can see that each time
+
+126
+00:08:45,000 --> 00:08:51,000
+I run this function it will add the next number in the sequence to our array.
+
+127
+00:08:51,000 --> 00:08:54,000
+So that is one of the solutions to this challenge.
+
+128
+00:08:54,000 --> 00:08:55,000
+Now what about the next step?
+
+129
+00:08:55,000 --> 00:08:59,000
+How do we get our code to, instead of putting 3 into our array,
+
+130
+00:08:59,000 --> 00:09:04,000
+put the word "Fizz", and instead of putting 5 we want it to write "Buzz".
+
+131
+00:09:05,000 --> 00:09:12,000
+Well, remember previously we learned about something called the modulo. And this allows us to check what
+
+132
+00:09:12,000 --> 00:09:14,000
+the remainder is.
+
+133
+00:09:14,000 --> 00:09:24,000
+So for example, if we said 12 % 2 then it will divide 12 by 2 and it will print out the remainder
+
+134
+00:09:25,000 --> 00:09:30,000
+which is 0, because 12 is fully divisible by 2. 12 divided by 2 equals 6
+
+135
+00:09:30,000 --> 00:09:31,000
+and there is no remainder,
+
+136
+00:09:32,000 --> 00:09:37,000
+whereas, something like 12 % 5, then you will get a remainder.
+
+137
+00:09:37,000 --> 00:09:39,000
+So 5 goes into 12 twice,
+
+138
+00:09:39,000 --> 00:09:43,000
+which gets us up to 10, and then there's a remainder of 2.
+
+139
+00:09:43,000 --> 00:09:49,000
+So a common way that programmers use the modulo is to check whether if a number is fully divisible
+
+140
+00:09:49,000 --> 00:09:50,000
+by another number.
+
+141
+00:09:50,000 --> 00:09:58,000
+So we can use the same concept in our code in order to check to see if the current value of count is
+
+142
+00:09:58,000 --> 00:10:00,000
+divisible by 3.
+
+143
+00:10:00,000 --> 00:10:07,000
+And when it is, then instead of pushing count, we're going to push "Fizz" into our output array.
+
+144
+00:10:07,000 --> 00:10:14,000
+Now if count is divisible by 5 then we're going to push "Buzz" into our output array instead of the number
+
+145
+00:10:14,000 --> 00:10:15,000
+5,
+
+146
+00:10:15,000 --> 00:10:22,000
+and similarly, for the case of FizzBuzz, when the numbers are both divisible by 3 and 5.
+
+147
+00:10:22,000 --> 00:10:23,000
+Now here's the challenge.
+
+148
+00:10:23,000 --> 00:10:26,000
+You should be able to call the function fizzBuzz in the console,
+
+149
+00:10:27,000 --> 00:10:33,000
+and every time you do so it will push the word "Fizz" into the array instead of the number that was divisible
+
+150
+00:10:33,000 --> 00:10:40,000
+by 3, and it will add the word "Buzz" into the array instead of the number that's divisible by 5.
+
+151
+00:10:40,000 --> 00:10:47,000
+And if a number is divisible by both 3 and 5 then it will add the word "FizzBuzz" into your array.
+
+152
+00:10:47,000 --> 00:10:53,000
+And you can keep going calling fizzBuzz each time to get the next value pushed onto the array.
+
+153
+00:10:53,000 --> 00:10:59,000
+So, using what you've learned about arrays, and some of the things that we've learnt in previous lessons,
+
+154
+00:10:59,000 --> 00:11:04,000
+pause the video now and see if you can complete this challenge.
+
+155
+00:11:04,000 --> 00:11:05,000
+All right.
+
+156
+00:11:05,000 --> 00:11:07,000
+So let's break down this problem.
+
+157
+00:11:07,000 --> 00:11:14,000
+The first thing that we need to do is to check if the value of count is divisible by three.
+
+158
+00:11:14,000 --> 00:11:21,000
+So to do that we can use the if statement. So we can say if (count % 3), 
+
+159
+00:11:21,000 --> 00:11:27,000
+so the remainder of count divided by 3 is equal to 0,
+
+160
+00:11:27,000 --> 00:11:31,000
+then in that case count is divisible by three,
+
+161
+00:11:31,000 --> 00:11:40,000
+and instead of pushing count into the output, we should push the word "Fizz". But otherwise,
+
+162
+00:11:40,000 --> 00:11:49,000
+or else, then we should push count, which is the number, and then we increase count by 1 and we print out
+
+163
+00:11:49,000 --> 00:11:50,000
+the value of output.
+
+164
+00:11:50,000 --> 00:11:55,000
+So now let's run our snippet and call fizzBuzz.
+
+165
+00:11:55,000 --> 00:12:04,000
+So we start off with 1, 2, and then we get Fizz because three is divisible by three, 4, 5, six, six
+
+166
+00:12:04,000 --> 00:12:05,000
+is divisible by three,
+
+167
+00:12:05,000 --> 00:12:07,000
+so we also get Fizz.
+
+168
+00:12:07,000 --> 00:12:09,000
+So our code is working.
+
+169
+00:12:09,000 --> 00:12:16,000
+All right so now let's address the next problem, Buzz. How do we take into account when our number is divisible
+
+170
+00:12:16,000 --> 00:12:18,000
+by five that it should print "Buzz"?
+
+171
+00:12:19,000 --> 00:12:27,000
+Well if, instead of having an else straight away, if we had an else if here, and we checked to see if count
+
+172
+00:12:27,000 --> 00:12:32,000
+is divisible of modulo, 5 and that equals 0,
+
+173
+00:12:32,000 --> 00:12:37,000
+then in that case, at this moment in time count is divisible by 5,
+
+174
+00:12:37,000 --> 00:12:49,000
+so instead of pushing count we will push "Buzz". So now let's run our snippet, clear our console, and call 
+
+175
+00:12:49,000 --> 00:12:49,000
+fizzBuzz().
+
+176
+00:12:49,000 --> 00:12:57,000
+So 1, 2, 3 is Fizz, 4, 5 is Buzz.
+
+177
+00:12:57,000 --> 00:13:02,000
+So our code is now working for Fizz and Buzz.
+
+178
+00:13:02,000 --> 00:13:09,000
+Now there's just one last thing that it's not complying with, which is, "What happens when the current number
+
+179
+00:13:09,000 --> 00:13:12,000
+is divisible by both 3 and 5?"
+
+180
+00:13:12,000 --> 00:13:20,000
+As you can see at this point the number is 15, and it's only printing Fizz because the code runs from
+
+181
+00:13:20,000 --> 00:13:28,000
+top to bottom, and the first thing that it'll encounter is this if statement, which says that if count is divisible
+
+182
+00:13:28,000 --> 00:13:36,000
+by 3 push() "Fizz". And once that's done it skips all the other else and else if statements, and it doesn't
+
+183
+00:13:36,000 --> 00:13:41,000
+even check to see whether it's also divisible by 5.
+
+184
+00:13:41,000 --> 00:13:49,000
+So there's a few ways of addressing this but the easiest way is to first check if count is divisible
+
+185
+00:13:49,000 --> 00:13:50,000
+by three
+
+186
+00:13:51,000 --> 00:13:56,000
+and at the same time count is divisible by five.
+
+187
+00:13:56,000 --> 00:14:03,000
+And in this case, we can push("FizzBuzz)" onto the output. And then we have
+
+188
+00:14:03,000 --> 00:14:12,000
+else if it's only divisible by three, push("Fizz"), else if it's only divisible by 5 then push("Buzz"),
+
+189
+00:14:12,000 --> 00:14:20,000
+and in all other scenarios, or else, then just push the number value of count on to our array.
+
+190
+00:14:20,000 --> 00:14:31,000
+So now if we run our code and call fizzBuzz(), then you can see that it works for both divisible by 5
+
+191
+00:14:31,000 --> 00:14:34,000
+and 3 as well as when it's divisible by both numbers.
+
+192
+00:14:34,000 --> 00:14:42,000
+So the order of your if statements matter a huge deal, and it's almost like a water flow, right?
+
+193
+00:14:42,000 --> 00:14:49,000
+The water, or the code, will flow into each of the conditions, and once it's found a condition that's true,
+
+194
+00:14:49,000 --> 00:14:52,000
+it will skip every other avenue.
+
+195
+00:14:52,000 --> 00:14:56,000
+So it's important to think about how you order your if and else if statements.
+
+196
+00:14:56,000 --> 00:15:01,000
+Now, there's a few other ways of solving this problem and it doesn't matter if you chose
+
+197
+00:15:01,000 --> 00:15:03,000
+my way of solving it or another way.
+
+198
+00:15:03,000 --> 00:15:09,000
+The whole point is getting you to think about how you can use conditionals and arrays to structure a
+
+199
+00:15:09,000 --> 00:15:10,000
+sequence.
+
+200
+00:15:10,000 --> 00:15:17,000
+Now, in the next lesson, we'll look at taking this code even further and making it even more automated,
+
+201
+00:15:17,000 --> 00:15:21,000
+because remember, what are we? We're programmers. And what have we got?
+
+202
+00:15:21,000 --> 00:15:27,000
+We've got all the codes. And just to take that point a little bit further, as extra reading you might
+
+203
+00:15:27,000 --> 00:15:31,000
+be interested in the story of a Russian programmer.
+
+204
+00:15:31,000 --> 00:15:37,000
+Now if you speak or read Russian then you will be able to read the story in its original form, and if
+
+205
+00:15:37,000 --> 00:15:43,000
+you don't, then there's a link to what somebody has translated into English.
+
+206
+00:15:43,000 --> 00:15:50,000
+It's a really funny story of an engineer who basically automated his entire work life using code, and
+
+207
+00:15:50,000 --> 00:15:54,000
+it fits in with our current theme of trying to automate everything that we do using code.
+
+208
+00:15:54,000 --> 00:15:57,000
+So enjoy and I'll see you on the next lesson.
+

@@ -1,0 +1,22 @@
+Solution 1: 
+var names = ["Angela", "Jack", "Pam", "James", "Lara", "Jason"];
+var yourName = prompt("Enter your name:");
+
+if(names.includes(yourName)) {
+    alert("Welcome to the party!");
+} else {
+    alert("Sorry, your name was not on the guest list.")
+}
+
+Solution 2:
+function nameList(yourName) {
+    var names = ["Angela", "Jack", "Pam", "James", "Lara", "Jason"];
+    
+    if(names.includes(yourName)) {
+        console.log("Welcome to the party!");
+    } else {
+        console.log("Sorry, your name was not on the guest list.")
+    }
+}
+
+nameList("Mark");

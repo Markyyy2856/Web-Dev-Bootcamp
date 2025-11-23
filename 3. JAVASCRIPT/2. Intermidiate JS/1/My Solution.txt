@@ -1,0 +1,7 @@
+var name1 = prompt("Enter your name:");
+var name2 = prompt("Enter your lover's name:");
+
+var loveNumber = Math.random() * 100;
+loveNumber = Math.floor(loveNumber) + 1;
+
+alert(name1 + " and " + name2 + ", your love percentage is " + loveNumber + "%")
